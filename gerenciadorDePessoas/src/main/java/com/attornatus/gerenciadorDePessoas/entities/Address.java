@@ -33,11 +33,14 @@ public class Address implements Serializable {
     @ManyToOne
     private Person person;
 
-    public Address(String place, int zipCode, String number, String city, Person person) {
+    private Boolean mainAddress;
+
+    public Address(String place, int zipCode, String number, String city, Person person, Boolean mainAddress) {
         this.place = place;
         this.zipCode = zipCode;
         this.number = number;
         this.city = city;
         this.person = person;
+        this.mainAddress = mainAddress;
     }
 }
