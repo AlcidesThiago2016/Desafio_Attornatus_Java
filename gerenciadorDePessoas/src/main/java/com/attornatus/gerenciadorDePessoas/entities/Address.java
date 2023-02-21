@@ -1,6 +1,7 @@
 package com.attornatus.gerenciadorDePessoas.entities;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.io.Serial;
@@ -33,6 +34,7 @@ public class Address implements Serializable {
     @ManyToOne
     private Person person;
 
+    @NotNull
     private Boolean mainAddress;
 
     public Address(String place, int zipCode, String number, String city, Person person, Boolean mainAddress) {

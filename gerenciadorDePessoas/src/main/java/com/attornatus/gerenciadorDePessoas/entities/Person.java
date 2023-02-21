@@ -27,12 +27,11 @@ public class Person implements Serializable {
 
     private String name;
 
-    @Id
     @Column(name = "date_birth")
     private Date dateOfBirth;
 
     @JsonManagedReference
-    @OneToOne(mappedBy = "person", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Address> addresses = new ArrayList<>();
 
     public Person(String name, Date dateOfBirth){
